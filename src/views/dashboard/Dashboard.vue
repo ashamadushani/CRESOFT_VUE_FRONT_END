@@ -11,19 +11,19 @@
           lg="4"
       >
         <base-material-chart-card
-            :data="customerCountryChart.data"
-            :options="customerCountryChart.options"
-            :responsive-options="customerCountryChart.responsiveOptions"
+            :data="adviserDepartmentChart.data"
+            :options="adviserDepartmentChart.options"
+            :responsive-options="adviserDepartmentChart.responsiveOptions"
             color="#E91E63"
             hover-reveal
             type="Bar"
         >
           <h4 class="card-title font-weight-light mt-2 ml-2">
-            Countries
+            Departments
           </h4>
 
           <p class="d-inline-flex font-weight-light ml-2 mt-1">
-            Countries of the customers
+            Departments of the advisers
           </p>
 
           <template v-slot:actions>
@@ -43,19 +43,19 @@
           lg="4"
       >
         <base-material-chart-card
-            :data="customerCityChart.data"
-            :options="customerCityChart.options"
-            :responsive-options="customerCityChart.responsiveOptions"
+            :data="reigonChart.data"
+            :options="reigonChart.options"
+            :responsive-options="reigonChart.responsiveOptions"
             color="grey"
             hover-reveal
             type="Bar"
         >
           <h4 class="card-title font-weight-light mt-2 ml-2">
-            Cities
+            Reigon
           </h4>
 
           <p class="d-inline-flex font-weight-light ml-2 mt-1">
-            Living cities of the customers
+            Reigon of the advisers
           </p>
 
           <template v-slot:actions>
@@ -65,7 +65,7 @@
             >
               mdi-clock-outline
             </v-icon>
-            <span class="caption grey--text font-weight-light">updated 10 minutes ago</span>
+            <span class="caption grey--text font-weight-light">updated 1 second ago</span>
           </template>
         </base-material-chart-card>
 
@@ -76,19 +76,19 @@
           lg="4"
       >
         <base-material-chart-card
-            :data="currencyChart.data"
-            :options="currencyChart.options"
+            :data="marketChart.data"
+            :options="marketChart.options"
             hover-reveal
             color="info"
             type="Bar"
         >
 
           <h3 class="card-title font-weight-light mt-2 ml-2">
-            Currency
+            Market
           </h3>
 
           <p class="d-inline-flex font-weight-light ml-2 mt-1">
-            Currency type of customers
+            Market type of advisers
           </p>
 
           <template v-slot:actions>
@@ -114,7 +114,7 @@
         >
           <template v-slot:heading>
             <div class="text-x3 font-weight-light">
-              Customers ({{ customerCount }})
+              Advisers ({{ adviserCount }})
             </div>
           </template>
           <v-card-text>
@@ -143,9 +143,9 @@ export default {
         labels: [],
         dataset: [],
       },
-      currencyChart: {
+      marketChart: {
         data: {
-          labels: ['RS', 'GBP', 'USD', 'CAD', 'AUD'],
+          labels: ['CRM', 'PBA', 'CRA', 'PBB', 'PBX','ITD','CRO'],
           series: [
             [],
           ],
@@ -164,9 +164,9 @@ export default {
           },
         },
       },
-      customerCountryChart: {
+      adviserDepartmentChart: {
         data: {
-          labels: ['LK', 'SC', 'USA', 'UK', 'CAN', 'AUS'],
+          labels: ['CRM1', 'PBA1', 'CRA2', 'PBA2', 'PBB2', 'PBB1','PBX1','CROA'],
           series: [
             [],
           ],
@@ -195,9 +195,9 @@ export default {
           }],
         ],
       },
-      customerCityChart: {
+      reigonChart: {
         data: {
-          labels: ['Colombo', 'Edinburgh', 'NewYork', 'London', 'Toronto', 'Melbourne'],
+          labels: ['CR', 'PB', 'IT'],
           series: [
             [],
           ],
@@ -240,175 +240,261 @@ export default {
         },
         {
           sortable: false,
+          text: 'Code',
+          value: 'code',
+        },
+        {
+          sortable: false,
           text: 'Name',
           value: 'name',
-        },
-        {
-          sortable: false,
-          text: 'Country',
-          value: 'country',
           align: 'right',
         },
         {
           sortable: false,
-          text: 'City',
-          value: 'city',
+          text: 'Short Name',
+          value: 'shortName',
           align: 'right',
         },
         {
           sortable: false,
-          text: 'Currency',
-          value: 'currency',
+          text: 'Department',
+          value: 'department',
           align: 'right',
         },
         {
           sortable: false,
-          text: 'Contact',
-          value: 'contact',
+          text: 'Tel_No.',
+          value: 'telNumber',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'ATE_ID.',
+          value: 'ateId',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'Username',
+          value: 'username',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'DDL_ID',
+          value: 'ddlId',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'REC_TYP.',
+          value: 'recTyp',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'Department id.',
+          value: 'departmentId',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'Record Status',
+          value: 'recordStatus',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'Request to Delete',
+          value: 'requestToDelete',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'Request user',
+          value: 'requestUser',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'Request date',
+          value: 'requestDate',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'Approve user',
+          value: 'approveUser',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'Approve Date',
+          value: 'approveDate',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'Reigon',
+          value: 'region',
+          align: 'right',
+        },
+        {
+          sortable: false,
+          text: 'Market',
+          value: 'market',
           align: 'right',
         },
       ],
       items: [],
-      customerCount: 0,
-      countryCount: {
-        lkCount: 0,
-        scCount: 0,
-        usaCount: 0,
-        ukCount: 0,
-        canCount: 0,
-        ausCount: 0,
+      adviserCount: 0,
+      departmentCount: {
+        // 'CRM1', 'PBA1', 'CRA2', 'PBA2', 'PBB2', 'PBB1','PBX1','CROA'
+        CRM1Count: 0,
+        PBA1Count: 0,
+        CRA2Count: 0,
+        PBA2Count: 0,
+        PBB2Count: 0,
+        PBB1Count: 0,
+        PBX1Count: 0,
+        CROACount: 0,
       },
-      currencyCount: {
-        rsCount: 0,
-        gbpCount: 0,
-        usdCount: 0,
-        cadCount: 0,
-        ausCount: 0,
+      marketCount: {
+        // 'CRM', 'PBA', 'CRA', 'PBB', 'PBX','ITD','CRO'
+        CRMCount: 0,
+        PBACount: 0,
+        CRACount: 0,
+        PBBCount: 0,
+        PBXCount: 0,
+        ITDCount: 0,
+        CROCount: 0,
       },
-      cityCount: {
-        ColomboCount: 0,
-        EdinburghCount: 0,
-        NewYorkCount: 0,
-        LondonCount: 0,
-        TorontoCount: 0,
-        MelbourneCount: 0,
+      reigonCount: {
+        CRCount: 0,
+        PBCount: 0,
+        ITCount: 0,
       },
     }
   },
   created() {
-    this.loadCustomers()
+    this.loadAdvisers()
   },
   methods: {
-    loadCustomers() {
-      // console.log("loading Customers")
+    loadAdvisers() {
+
       $.ajax({
-        url: 'http://localhost:8080/api/v1/customer',
+        url: 'http://localhost:8080/api/v1/adviser',
         method: 'GET',
       }).done(resp => {
         // console.log(resp)
         this.items = resp
-        this.customerCount = this.items.length
+        this.adviserCount = this.items.length
         // console.log(this.items)
-        this.loadCountryBarGraph();
+        this.loadDepartmentBarGraph();
         this.loadCurrencyBarGraph();
-        this.loadCityChart();
+        this.loadReigonChart();
       })
 
     },
-    loadCountryBarGraph() {
-      this.items.forEach(this.loopCountries)
-      this.customerCountryChart.data.series[0].push(this.countryCount.lkCount)
-      this.customerCountryChart.data.series[0].push(this.countryCount.scCount)
-      this.customerCountryChart.data.series[0].push(this.countryCount.usaCount)
-      this.customerCountryChart.data.series[0].push(this.countryCount.ukCount)
-      this.customerCountryChart.data.series[0].push(this.countryCount.canCount)
-      this.customerCountryChart.data.series[0].push(this.countryCount.ausCount)
+    loadDepartmentBarGraph() {
+      this.items.forEach(this.loopDepartment)
+      this.adviserDepartmentChart.data.series[0].push(this.departmentCount.CRM1Count)
+      this.adviserDepartmentChart.data.series[0].push(this.departmentCount.PBA1Count)
+      this.adviserDepartmentChart.data.series[0].push(this.departmentCount.CRA2Count)
+      this.adviserDepartmentChart.data.series[0].push(this.departmentCount.PBA2Count)
+      this.adviserDepartmentChart.data.series[0].push(this.departmentCount.PBB2Count)
+      this.adviserDepartmentChart.data.series[0].push(this.departmentCount.PBB1Count)
+      this.adviserDepartmentChart.data.series[0].push(this.departmentCount.PBX1Count)
+      this.adviserDepartmentChart.data.series[0].push(this.departmentCount.CROACount)
     },
-    loopCountries(item, index) {
-      //'SC', 'USA', 'UK', 'CAN', 'AUS'
-      switch (item.country) {
-        case 'LK':
-          this.countryCount.lkCount++;
+    loopDepartment(item, index) {
+     // 'CRM1', 'PBA1', 'CRA2', 'PBA2', 'PBB2', 'PBB1','PBX1','CROA'
+      switch (item.department) {
+        case 'CRM1':
+          this.departmentCount.CRM1Count++;
           break;
-        case 'SC':
-          this.countryCount.scCount++;
+        case 'PBA1':
+          this.departmentCount.PBA1Count++;
           break;
-        case 'USA':
-          this.countryCount.usaCount++;
+        case 'CRA2':
+          this.departmentCount.CRA2Count++;
           break;
-        case 'UK':
-          this.countryCount.ukCount++;
+        case 'PBA2':
+          this.departmentCount.PBA2Count++;
           break;
-        case 'CAN':
-          this.countryCount.canCount++;
+        case 'PBB2':
+          this.departmentCount.PBB2Count++;
           break;
-        case 'AUS':
-          this.countryCount.ausCount++;
-          break;
+        case 'PBB1':
+         this.departmentCount.PBB1Count++;
+         break;
+        case 'PBX1':
+         this.departmentCount.PBX1Count++;
+         break;
+        case 'CROA':
+         this.departmentCount.CROACount++;
+         break;
+
       }
 
     },
+
     loadCurrencyBarGraph() {
-      this.items.forEach(this.loopCurrency)
-      this.currencyChart.data.series[0].push(this.currencyCount.rsCount)
-      this.currencyChart.data.series[0].push(this.currencyCount.gbpCount)
-      this.currencyChart.data.series[0].push(this.currencyCount.usdCount)
-      this.currencyChart.data.series[0].push(this.currencyCount.cadCount)
-      this.currencyChart.data.series[0].push(this.currencyCount.ausCount)
+      this.items.forEach(this.loopMarket)
+      this.marketChart.data.series[0].push(this.marketCount.CRMCount)
+      this.marketChart.data.series[0].push(this.marketCount.PBACount)
+      this.marketChart.data.series[0].push(this.marketCount.CRACount)
+      this.marketChart.data.series[0].push(this.marketCount.PBBCount)
+      this.marketChart.data.series[0].push(this.marketCount.PBXCount)
+      this.marketChart.data.series[0].push(this.marketCount.ITDCount)
+      this.marketChart.data.series[0].push(this.marketCount.CROCount)
     },
-    loopCurrency(item, index) {
-      //'SC', 'USA', 'UK', 'CAN', 'AUS'
-      switch (item.currency) {
-        case 'RS':
-          this.currencyCount.rsCount++;
+    loopMarket(item, index) {
+      // 'CRM', 'PBA', 'CRA', 'PBB', 'PBX','ITD','CRO'
+      switch (item.market) {
+        case 'CRM':
+          this.marketCount.CRMCount++;
           break;
-        case 'GBP':
-          this.currencyCount.gbpCount++;
+        case 'PBA':
+          this.marketCount.PBACount++;
           break;
-        case 'USD':
-          this.currencyCount.usdCount++;
+        case 'CRA':
+         this.marketCount.CRACount++;
           break;
-        case 'CAD':
-          this.currencyCount.cadCount++;
+        case 'PBB':
+          this.marketCount.PBBCount++;
           break;
-        case 'AUD':
-          this.currencyCount.ausCount++;
+        case 'PBX':
+          this.marketCount.PBXCount++;
+          break;
+        case 'ITD':
+          this.marketCount.ITDCount++;
+          break;
+        case 'CRO':
+          this.marketCount.CROCount++;
           break;
       }
 
     },
-    loadCityChart() {
-      // this.citiesChart.dataentry = null;
-      // this.citiesChart.datalabel = null;
-      // this.citiesChart.labels = ['Colombo', 'Edinburgh', 'New York', 'London', 'Toronto', 'Melbourne'];
-      // this.citiesChart.dataset = [5, 10, 15, 25,3,20];
-      this.items.forEach(this.loopCities)
-      this.customerCityChart.data.series[0].push(this.cityCount.ColomboCount)
-      this.customerCityChart.data.series[0].push(this.cityCount.EdinburghCount)
-      this.customerCityChart.data.series[0].push(this.cityCount.NewYorkCount)
-      this.customerCityChart.data.series[0].push(this.cityCount.LondonCount)
-      this.customerCityChart.data.series[0].push(this.cityCount.TorontoCount)
-      this.customerCityChart.data.series[0].push(this.cityCount.MelbourneCount)
+
+
+    loadReigonChart() {
+      this.items.forEach(this.loopReigons)
+      this.reigonChart.data.series[0].push(this.reigonCount.CRCount)
+      this.reigonChart.data.series[0].push(this.reigonCount.PBCount)
+      this.reigonChart.data.series[0].push(this.reigonCount.ITCount)
     },
-    loopCities(item, index) {
-      switch (item.city) {
-        case 'Colombo':
-          this.cityCount.ColomboCount++;
+    loopReigons(item, index) {
+      // 'CR', 'PB', 'IT'
+      switch (item.region) {
+        case 'CR':
+          this.reigonCount.CRCount++;
           break;
-        case 'Edinburgh':
-          this.cityCount.EdinburghCount++;
+        case 'PB':
+          this.reigonCount.PBCount++;
           break;
-        case 'New York':
-          this.cityCount.NewYorkCount++;
-          break;
-        case 'London':
-          this.cityCount.LondonCount++;
-          break;
-        case 'Toronto':
-          this.cityCount.TorontoCount++;
-          break;
-        case 'Melbourne':
-          this.cityCount.MelbourneCount++;
+        case 'IT':
+          this.reigonCount.ITCount++;
           break;
       }
 

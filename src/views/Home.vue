@@ -4,7 +4,8 @@
 
 <script>
   import HelloWorld from '../components/HelloWorld'
-  
+  import ChartDoughnut from "@/components/ChartDoughnut";
+
   export default {
     name: 'Home',
 
