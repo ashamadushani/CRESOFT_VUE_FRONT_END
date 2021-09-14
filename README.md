@@ -3,4 +3,4 @@
 To run this project use
 
 npm install
-Nom run serve
+npm run serve
