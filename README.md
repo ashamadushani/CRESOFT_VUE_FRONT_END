@@ -1,6 +1,19 @@
-# CRESOFT_VUE_FRONT_END
+# cresoft-v0.1
 
-To run this project use
-
+## Project setup
+```
 npm install
-Nom run serve
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -31,15 +31,17 @@
 </template>
 
 <script>
-  // Utilities
+// Utilities
   import { mapState, mapMutations } from 'vuex'
 
   export default {
-    data(){
-      return{
-        value:false,
-      }
+    props: {
+      value: {
+        type: Boolean,
+        default: false,
+      },
     },
+
     name: 'DashboardCoreAppBar',
 
     computed: {
